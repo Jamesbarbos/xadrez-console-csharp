@@ -107,7 +107,7 @@ namespace xadrez
 
         public void validaPosicaoDeDestino(Posicao origem, Posicao destino)
         {
-            if (!tab.peca(origem).podeMoverPara(destino))
+            if (!tab.peca(origem).movimentoPossivel(destino))
             {
                 throw new TabuleiroException("Posição de destino inválida!");
             }
@@ -211,6 +211,7 @@ namespace xadrez
                     {
                         if (mat[i,j])
                         {
+                            Posicao origem = x.posicao;
                             Posicao destino = new Posicao(i, j);
                             Peca pecaCapturada = executaMovimento(x.posicao, destino);
                             bool testeXeque = estaEmXeque(cor);
