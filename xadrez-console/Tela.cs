@@ -16,6 +16,11 @@ public static void imprimirPartida(PartidaDeXadrez partida)
             Console.WriteLine();
             Console.WriteLine("Turno:" + partida.turno);
             Console.WriteLine("Aguardando jogada da peça : " + partida.jogadorAtual);
+            if (partida.xeque)
+            {
+                Console.WriteLine("XEQUE!");
+            }
+            
         }        
 public static void imprimirPecasCapturadas(PartidaDeXadrez partida)
         {
